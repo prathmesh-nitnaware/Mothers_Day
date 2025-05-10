@@ -1,0 +1,173 @@
+:root {
+    --background-color: #ffb2dc; /* Pinkish background */
+    --text-color: #1f1e1e;
+    --button-bg: #ff69b4; /* Hot pink button */
+    --button-hover-bg: #ff36a1; /* Deep pink button hover */
+    --box-bg: rgba(255, 255, 255, 0.8); /* Light semi-transparent box background */
+    --box-border: #ff69b4; /* Hot pink border */
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    overflow: hidden;
+  }
+  
+  .hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Slight dark overlay */
+    z-index: -1;
+  }
+  
+  .content-box {
+    position: fixed; /* Fix the box in place */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    background: var(--box-bg);
+    border: 2px solid var(--box-border);
+    border-radius: 12px;
+    padding: 5%; /* Adjust padding for responsiveness */
+    width: 80%; /* Make it responsive to screen size */
+    max-width: 600px; /* Set a maximum width */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    z-index: 10; /* Bring the content box to the front-most layer */
+  }
+  
+  .animated-text {
+    font-size: 3rem;
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out forwards;
+    opacity: 0;
+    will-change: opacity, transform;
+  }
+  
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    background-color: var(--button-bg);
+    border: none;
+    border-radius: 20px; /* Oval shape */
+    color: white;
+    cursor: pointer; /* Ensures the pointer changes to a hand icon */
+    transition: background 0.3s;
+    margin-top: 20px; /* Add space above the button */
+  }
+  
+  .cta-button:hover {
+    background-color: var(--button-hover-bg);
+  }
+  
+  .cta-button:focus {
+    outline: 2px solid var(--button-hover-bg);
+    outline-offset: 2px;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Canvas background */
+  #particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  /* Scratch card container */
+  .scratch-card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 50px auto;
+    background: #fff;
+    border: 2px solid var(--box-border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Scratch overlay */
+  .scratch-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ccc;
+    z-index: 1;
+    cursor: pointer;
+  }
+  
+  /* Scratch button */
+  .scratch-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px 24px;
+    font-size: 1rem;
+    background-color: var(--button-bg);
+    border: none;
+    border-radius: 20px; /* Oval shape */
+    color: white;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.3s;
+  }
+  
+  .scratch-button:hover {
+    background-color: var(--button-hover-bg);
+  }
+
+  /* Button container */
+  .button-container {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border: 2px solid var(--box-border);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
